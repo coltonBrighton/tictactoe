@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tic-Tac-Toe</title>
+    <link
+      rel="stylesheet"
+      href="./node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="./styles.css"
+    />
+  </head>
+  <body class="container bg-dark">
+    <br />
+    <div>
+      <h1 class="display-5 text-center text-light" id="title">Tic Tac Toe</h1>
+    </div>
+
+    <!-- Choose your side X or O -->
+    <div class="my-5">
+      <h1 id="turn" class="text-center text-light">Choose Your Side</h1>
+    </div>
+    <div id="player-choice" class="row">
+      <div class="col-6 mx-auto text-center bg-dark w-50">
+        <button
+          id="x"
+          class="h-100 w-100 btn btn-lg btn-outline-light rounded-pill bg-secondary mx-auto btn-block"
+        >
+          ❌'s
+        </button>
+      </div>
+      <div class="col-6 mx-auto text-center bg-dark w-50">
+        <button id="o" class="h-100 w-100 btn btn-lg btn-outline-light rounded-pill bg-secondary mx-auto">
+          ⭕'s
+        </button>
+      </div>
+    </div>
+
+    <!-- actual game zone -->
+    <div id="game-zone" class="invisible">
+      <div class="alert alert-info invisible text-dark" id="result"></div>
+      <div class="row mb-3 card-group">
+        <div class="col-4 card p-0 bg-dark">
+          <button
+            id="btn-1"
+            class=" card-body btn btn-lg btn-outline-dark rounded p-0 bg-secondary"
+            onclick="playerMove(1)"
+          >
+          </button>
+        </div>
+        <div class="col-4 card p-0 bg-dark">
+          <button
+            id="btn-2"
+            class="card-body btn btn-lg btn-outline-dark rounded p-0 bg-secondary"
+            onclick="playerMove(2)"
+          >
+          </button>
+        </div>
+        <div class="col-4 card p-0 bg-dark">
+          <button
+            id="btn-3"
+            class="card-body btn btn-lg btn-outline-dark rounded p-0 bg-secondary"
+            onclick="playerMove(3)"
+          >
+          </button>
+        </div>
+      </div>
+      <div class="row card-group mb-3">
+        <!-- second row -->
+        <div class="col-4 card p-0 bg-dark">
+          <button
+            id="btn-4"
+            class="card-body btn btn-lg btn-outline-dark rounded p-0 bg-secondary"
+            onclick="playerMove(4)"
+          >
+          </button>
+        </div>
+        <div class="col-4 card p-0 bg-dark">
+          <button
+            id="btn-5"
+            class="card-body btn btn-lg btn-outline-dark rounded p-0 bg-secondary"
+            onclick="playerMove(5)"
+          >
+          </button>
+        </div>
+        <div class="col-4 card p-0 bg-dark">
+          <button
+            id="btn-6"
+            class="card-body btn btn-lg btn-outline-dark rounded p-0 bg-secondary"
+            onclick="playerMove(6)"
+          >
+          </button>
+        </div>
+      </div>
+      <div class="row card-group">
+        <!-- third row -->
+        <div class="col-4 card p-0 bg-dark">
+          <button
+            id="btn-7"
+            class="card-body btn btn-lg btn-outline-dark rounded p-0 bg-secondary"
+            onclick="playerMove(7)"
+          >
+          </button>
+        </div>
+        <div class="col-4 card p-0 bg-dark">
+          <button
+            id="btn-8"
+            class="card-body card-body btn btn-lg btn-outline-dark rounded p-0 bg-secondary"
+            onclick="playerMove(8)"
+          >
+          </button>
+        </div>
+        <div class="col-4 card p-0 bg-dark">
+          <button
+            id="btn-9"
+            class="card-body card-body btn btn-lg btn-outline-dark rounded p-0 bg-secondary"
+            onclick="playerMove(9)"
+          >
+          </button>
+        </div>
+      </div>
+      <div>
+        <button class="btn btn-danger mt-4" onclick="resetGame()">Restart Game</button>
+      </div>
+    </div>
+
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="./tictactoe.js"></script>
+  </body>
+</html>
