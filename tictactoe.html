@@ -8,32 +8,32 @@
       rel="stylesheet"
       href="./node_modules/bootstrap/dist/css/bootstrap.min.css"
     />
-    <link
-      rel="stylesheet"
-      href="./styles.css"
-    />
+    <link rel="stylesheet" href="./styles.css" />
   </head>
   <body class="container bg-dark">
     <br />
     <div>
-      <h1 class="display-5 text-center text-light" id="title">Tic Tac Toe</h1>
+      <h1 class="title display-1 text-center text-light fw-bolder" id="title">Tic Tac Toe</h1>
     </div>
 
     <!-- Choose your side X or O -->
-    <div class="my-5">
-      <h1 id="turn" class="text-center text-light">Choose Your Side</h1>
+    <div class="">
+      <h1 id="turn" class="title text-center text-light">Choose Your Side</h1>
     </div>
     <div id="player-choice" class="row">
-      <div class="col-6 mx-auto text-center bg-dark w-50">
+      <div class="col-6 mx-auto text-center w-50">
         <button
           id="x"
-          class="h-100 w-100 btn btn-lg btn-outline-light rounded-pill bg-secondary mx-auto btn-block"
+          class="h-100 w-100 btn btn-lg rounded-pill bg-dark-subtle shadow-lg"
         >
           ❌'s
         </button>
       </div>
-      <div class="col-6 mx-auto text-center bg-dark w-50">
-        <button id="o" class="h-100 w-100 btn btn-lg btn-outline-light rounded-pill bg-secondary mx-auto">
+      <div class="col-6 mx-auto text-center w-50">
+        <button
+          id="o"
+          class="h-100 w-100 btn btn-lg rounded-pill bg-dark-subtle shadow-lg"
+        >
           ⭕'s
         </button>
       </div>
@@ -41,89 +41,82 @@
 
     <!-- actual game zone -->
     <div id="game-zone" class="invisible">
-      <div class="alert alert-info invisible text-dark" id="result"></div>
-      <div class="row mb-3 card-group">
-        <div class="col-4 card p-0 bg-dark">
+      <div class="alert alert-light invisible text-dark" id="result"></div>
+      <div class="row mb-3 text-center">
+        <div class="col-4 p-0">
           <button
             id="btn-1"
-            class=" card-body btn btn-lg btn-outline-dark rounded p-0 bg-secondary"
+            class="btn btn-lg rounded p-0 bg-dark-subtle shadow"
             onclick="playerMove(1)"
-          >
-          </button>
+          ></button>
         </div>
-        <div class="col-4 card p-0 bg-dark">
+        <div class="col-4 p-0">
           <button
             id="btn-2"
-            class="card-body btn btn-lg btn-outline-dark rounded p-0 bg-secondary"
+            class="btn btn-lg rounded p-0 bg-dark-subtle shadow"
             onclick="playerMove(2)"
-          >
-          </button>
+          ></button>
         </div>
-        <div class="col-4 card p-0 bg-dark">
+        <div class="col-4 p-0">
           <button
             id="btn-3"
-            class="card-body btn btn-lg btn-outline-dark rounded p-0 bg-secondary"
+            class="btn btn-lg rounded p-0 bg-dark-subtle shadow"
             onclick="playerMove(3)"
-          >
-          </button>
+          ></button>
         </div>
       </div>
-      <div class="row card-group mb-3">
+      <div class="row mb-3 text-center">
         <!-- second row -->
-        <div class="col-4 card p-0 bg-dark">
+        <div class="col-4 p-0">
           <button
             id="btn-4"
-            class="card-body btn btn-lg btn-outline-dark rounded p-0 bg-secondary"
+            class="btn btn-lg rounded p-0 bg-dark-subtle shadow"
             onclick="playerMove(4)"
-          >
-          </button>
+          ></button>
         </div>
-        <div class="col-4 card p-0 bg-dark">
+        <div class="col-4 p-0">
           <button
             id="btn-5"
-            class="card-body btn btn-lg btn-outline-dark rounded p-0 bg-secondary"
+            class="btn btn-lg rounded p-0 bg-dark-subtle shadow"
             onclick="playerMove(5)"
-          >
-          </button>
+          ></button>
         </div>
-        <div class="col-4 card p-0 bg-dark">
+        <div class="col-4 p-0">
           <button
             id="btn-6"
-            class="card-body btn btn-lg btn-outline-dark rounded p-0 bg-secondary"
+            class="btn btn-lg rounded p-0 bg-dark-subtle shadow"
             onclick="playerMove(6)"
-          >
-          </button>
+          ></button>
         </div>
       </div>
-      <div class="row card-group">
+      <div class="row text-center">
         <!-- third row -->
-        <div class="col-4 card p-0 bg-dark">
+        <div class="col-4 p-0">
           <button
             id="btn-7"
-            class="card-body btn btn-lg btn-outline-dark rounded p-0 bg-secondary"
+            class="btn btn-lg rounded p-0 bg-dark-subtle shadow"
             onclick="playerMove(7)"
-          >
-          </button>
+          ></button>
         </div>
-        <div class="col-4 card p-0 bg-dark">
+        <div class="col-4 p-0">
           <button
             id="btn-8"
-            class="card-body card-body btn btn-lg btn-outline-dark rounded p-0 bg-secondary"
+            class="btn btn-lg rounded p-0 bg-dark-subtle shadow"
             onclick="playerMove(8)"
-          >
-          </button>
+          ></button>
         </div>
-        <div class="col-4 card p-0 bg-dark">
+        <div class="col-4 p-0">
           <button
             id="btn-9"
-            class="card-body card-body btn btn-lg btn-outline-dark rounded p-0 bg-secondary"
+            class="btn btn-lg rounded p-0 bg-dark-subtle shadow"
             onclick="playerMove(9)"
-          >
-          </button>
+          ></button>
         </div>
       </div>
-      <div>
-        <button class="btn btn-danger mt-4" onclick="resetGame()">Restart Game</button>
+      <div class="text-end">
+        <button class="btn btn-secondary mt-4 shadow" onclick="resetGame()">
+          Restart Game
+        </button>
       </div>
     </div>
 

@@ -5,7 +5,6 @@ A heading should say whether it is X's or O's turn and change with each move mad
 A button should be available to clear the grid and restart the game.
 When a player has won, or the board is full and the game results in a draw, a Bootstrap alert or similar Bootstrap component should appear across the screen announcing the winner.
 */
-// depending on what button is clicked "X's or O's" display who's turn it is.
 
 // variable to track current player
 let currentPlayer;
@@ -28,7 +27,36 @@ document.getElementById('o').addEventListener("click", () => {
 
 // Render player turn
 function renderTurn(player) {
-    document.getElementById('turn').textContent = `It's ${player}'s turn`;
+    return document.getElementById('turn').textContent = `It's ${player}'s turn`;
+}
+
+function hideButtons() {
+    return document.getElementById('player-choice').classList.add('collapse');
+}
+
+function showGameZoneButtons() {
+    return document.getElementById('game-zone').classList.remove('invisible')
+}
+
+// display result of game
+function displayResult(message) {
+    gameOver = true;
+    document.getElementById('result').textContent = message;
+    document.getElementById('result').classList.remove('invisible')
+}
+
+// hide results
+function hideResult() {
+    return document.getElementById('result').classList.add('invisible');
+}
+
+// clear buttons
+function clearButtons(i) {
+    return document.getElementById(`btn-${i}`).textContent = '';
+}
+
+function renderButton(btnIdx, currentPlayer) {
+    return document.getElementById(`btn-${btnIdx}`).textContent = currentPlayer;
 }
 
 function choosePlayer(choice) {
@@ -37,9 +65,9 @@ function choosePlayer(choice) {
     // render player turn
     renderTurn(currentPlayer);
     // hide butttons for player choice
-    document.getElementById('player-choice').classList.add('invisible');
+    hideButtons();
     // unhide game buttons
-    document.getElementById('game-zone').classList.remove('invisible')
+    showGameZoneButtons();
 }
 
 // handle player turn
@@ -47,7 +75,7 @@ function playerMove(btnIdx){
     if (btnArray[btnIdx - 1] === '' && !gameOver) {
         // update button
         btnArray[btnIdx - 1] = currentPlayer;
-        document.getElementById(`btn-${btnIdx}`).textContent = currentPlayer;
+        renderButton(btnIdx, currentPlayer);
         checkWinner();
         switchPlayer();
     }
@@ -82,24 +110,17 @@ function checkWinner() {
     }
 }
 
-// display result of game
-function displayResult(message) {
-    gameOver = true;
-    document.getElementById('result').textContent = message;
-    document.getElementById('result').classList.remove('invisible')
-}
-
 function resetGame() {
     btnArray = ['', '', '', '', '', '', '', '', ''];
     gameOver = false;
     currentPlayer = '❌';
     renderTurn(currentPlayer);
-    document.getElementById('result').classList.add('invisible');
+    hideResult();
 
     // clear buttons
     for(let i = 1; i <= 9; i++) {
         // reset buttons
-        document.getElementById(`btn-${i}`).textContent = '';
+        clearButtons(i);
     }
 }
 

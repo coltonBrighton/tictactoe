@@ -1,4 +1,13 @@
-.card {
-    width: 200px;
-    height: 182px;
+.btn {
+    width: 150px;
+    height: 150px;
+}
+
+body {
+    background-image: url('./img/bg-picture.png');
+    height: 100vh;
+}
+
+.title {
+    text-shadow: 3px 3px 4px black;
 }
