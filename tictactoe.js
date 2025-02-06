@@ -8,7 +8,7 @@ When a player has won, or the board is full and the game results in a draw, a Bo
 
 // variable to track current player
 let currentPlayer;
-// track player choice
+// variable to track player choice
 let choice;
 // varible to track the game buttons
 let btnArray = ['', '', '', '', '', '', '', '', ''];
@@ -16,7 +16,7 @@ let btnArray = ['', '', '', '', '', '', '', '', ''];
 // varible to determine if game is over
 let gameOver = false;
 
-// handle player turns
+// buttons that determine if you are ❌'s or ⭕'s
 document.getElementById('x').addEventListener("click", () => {
     choosePlayer('❌');
 })
@@ -25,7 +25,8 @@ document.getElementById('o').addEventListener("click", () => {
     choosePlayer('⭕');
 })
 
-// Render player turn
+
+// function to show who's turn it is
 function renderTurn(player) {
     return document.getElementById('turn').textContent = `It's ${player}'s turn`;
 }
@@ -51,41 +52,46 @@ function hideResult() {
 }
 
 // clear buttons
-function clearButtons(i) {
-    return document.getElementById(`btn-${i}`).textContent = '';
+function clearButtons() {
+    for(let i = 1; i <= 9; i++) {
+        document.getElementById(`btn-${i}`).textContent = '';
+    }
 }
 
+// show x's or o's depending on who's turn it is
 function renderButton(btnIdx, currentPlayer) {
     return document.getElementById(`btn-${btnIdx}`).textContent = currentPlayer;
 }
-
+// function that holds the choice of x's or o's
 function choosePlayer(choice) {
     userChoice = choice;
-    currentPlayer = '❌'; // Player X always goes first
+    currentPlayer = '❌' // x goes first
     // render player turn
     renderTurn(currentPlayer);
     // hide butttons for player choice
     hideButtons();
-    // unhide game buttons
+    // unhide game zone buttons
     showGameZoneButtons();
 }
 
 // handle player turn
 function playerMove(btnIdx){
     if (btnArray[btnIdx - 1] === '' && !gameOver) {
-        // update button
+        // find current player
         btnArray[btnIdx - 1] = currentPlayer;
         renderButton(btnIdx, currentPlayer);
         checkWinner();
         switchPlayer();
     }
 }
+
 // function to switch which player is currently playing
 function switchPlayer() {
     currentPlayer = (currentPlayer === '❌') ? '⭕' : '❌';
     renderTurn(currentPlayer);
 }
 
+// function to determine the winner comparing an array pattern a winning array pattern
 function checkWinner() {
     // winning combos
     const winPattern = [
@@ -110,17 +116,13 @@ function checkWinner() {
     }
 }
 
+// function that resets the game back to default
 function resetGame() {
     btnArray = ['', '', '', '', '', '', '', '', ''];
     gameOver = false;
     currentPlayer = '❌';
     renderTurn(currentPlayer);
     hideResult();
-
-    // clear buttons
-    for(let i = 1; i <= 9; i++) {
-        // reset buttons
-        clearButtons(i);
-    }
+    clearButtons();
 }
 

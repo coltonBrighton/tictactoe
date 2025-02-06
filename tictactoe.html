@@ -4,21 +4,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tic-Tac-Toe</title>
+    <!-- link to stylesheet for bootstrap -->
     <link
       rel="stylesheet"
       href="./node_modules/bootstrap/dist/css/bootstrap.min.css"
     />
+    <!-- link to stylesheet for my CSS -->
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body class="container bg-dark">
     <br />
     <div>
-      <h1 class="title display-1 text-center text-light fw-bolder" id="title">Tic Tac Toe</h1>
+      <!-- title  -->
+      <h1 class="title display-1 text-center text-dark fw-semibold" id="title">Tic Tac Toe</h1>
     </div>
 
     <!-- Choose your side X or O -->
     <div class="">
-      <h1 id="turn" class="title text-center text-light">Choose Your Side</h1>
+      <h1 id="turn" class="title text-center text-dark">Choose Your Side</h1>
     </div>
     <div id="player-choice" class="row">
       <div class="col-6 mx-auto text-center w-50">
@@ -39,7 +42,7 @@
       </div>
     </div>
 
-    <!-- actual game zone -->
+    <!-- actual game zone consisting of 9 buttons -->
     <div id="game-zone" class="invisible">
       <div class="alert alert-light invisible text-dark" id="result"></div>
       <div class="row mb-3 text-center">
@@ -113,15 +116,18 @@
           ></button>
         </div>
       </div>
+      <!-- reset button -->
       <div class="text-end">
         <button class="btn btn-secondary mt-4 shadow" onclick="resetGame()">
           Restart Game
         </button>
       </div>
     </div>
-
+    <!-- link to bootstrap js -->
     <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- link to jQuery -->
     <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+    <!-- link to my JS file tictactoe.js -->
     <script src="./tictactoe.js"></script>
   </body>
 </html>

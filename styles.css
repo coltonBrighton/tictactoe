@@ -1,13 +1,16 @@
+/* change width and height of buttons to be fixed sizes */
 .btn {
     width: 150px;
     height: 150px;
 }
 
+/* make background an image */
 body {
-    background-image: url('./img/bg-picture.png');
+    background-image: url('./img/field-1728099_1920.jpg');
     height: 100vh;
 }
 
+/* add shadow to title */
 .title {
     text-shadow: 3px 3px 4px black;
 }
